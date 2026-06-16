@@ -11,12 +11,11 @@ int indLeft(int arr[], int n, int target)
     {
         int mid = (right + left) / 2;
 
-        if(arr[mid] == target)
+        if(arr[mid] >= target)
         {
             ans = mid;
             right = mid - 1; 
         }
-        else if(arr[mid] > target) right = mid - 1;
         else left = mid + 1;
     }
 
@@ -32,7 +31,7 @@ int indRight(int arr[], int n, int target)
     {
         int mid = (right + left) / 2;
 
-        if(arr[mid] >= target)
+        if(arr[mid] > target)
         {
             ans = mid;
             right = mid - 1; 
@@ -40,8 +39,7 @@ int indRight(int arr[], int n, int target)
         else left = mid + 1;
     }
 
-    if(ans == n) return -1;
-    else return ans;
+    return ans;
 
 
 }
