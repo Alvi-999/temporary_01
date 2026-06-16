@@ -9,17 +9,17 @@ int main()
 
     while(t--)
     {
-        double n;
+        long long n;
         cin >> n;
 
-        double left = 0, right = n;
+        long double left = 0, right = 1e6;
 
         bool printed = false;
-        while((right - left) > 1e-4)
+        while((right - left) > 1e-7)
         {
-            float mid = (left + right) / 2.0;
+            long double mid = (left + right) / 2.0;
 
-            if((mid * mid * mid) > n) right = mid;
+            if((mid * mid * mid) >= (long double)n) right = mid;
             else left = mid;
         }
 
